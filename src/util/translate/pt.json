@@ -1,3 +1,18 @@
 {
-    "Welcome to React": "Bem vindo ao React e ao react-i18next"
+    "HOME": {
+        "WELCOME": "Bem-vindo visitante!",
+        "RESUME": "Currículo",
+        "LANGUAGE": "Língua:",
+        "DEMOS": "Demos",
+        "GITHUB": "Github",
+        "ENGLISH": "Inglês",
+        "PORTUGUESE": "Português"
+    },
+    "CODES": {
+        "REPOSITORY": "Repositório",
+        "DESCRIPTION": "Descrição",
+        "LANGUAGE": "Linguagem",
+        "CREATION_DATE": "Data de Criação",
+        "OPEN_CODE": "Abrir código"
+    }
 }
