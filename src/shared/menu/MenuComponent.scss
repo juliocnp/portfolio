@@ -1,0 +1,25 @@
+
+
+.menu-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    > .welcome {
+      margin-left: 8px;
+      white-space: nowrap;
+    }
+    > .toggle-button {
+      justify-self: flex-end;
+      color: '#ADADAD';
+    }
+    > .svg-icon {
+      display: block;
+      margin: auto;
+    }
+    &--center { 
+      justify-content: center;
+    }
+    &--start { 
+      justify-content: start;
+    }
+  }

@@ -1,31 +1,56 @@
 import './Home.scss';
-import { ProSidebar, Menu, MenuItem, SubMenu, SidebarContent, SidebarFooter, SidebarHeader } from 'react-pro-sidebar';
 import 'react-pro-sidebar/dist/css/styles.css';
-import AccountBalanceWalletIcon from '@material-ui/icons/AccountBalanceWallet';
-import AccessibleForwardIcon from '@material-ui/icons/AccessibleForward';
-import { useTranslation } from 'react-i18next';
+import { createTheme } from '@material-ui/core/styles';
+import { useEffect } from 'react';
+import MenuComponent from '../shared/menu/MenuComponent';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+import ResumeComponent from './resume/ResumeComponent';
+import DemosComponent from './demos/DemosComponent';
+import CodeComponent from './codes/CodeComponent';
 
 function Home() {
-  const { t } = useTranslation();
+
+  useEffect(() => { 
+    createTheme({
+      palette: {
+        primary: {
+          light: '#757ce8',
+          main: '#3f50b5',
+          dark: '#002884',
+          contrastText: '#fff',
+        },
+        secondary: {
+          light: '#ff7961',
+          main: '#f44336',
+          dark: '#ba000d',
+          contrastText: '#000',
+        }
+      },
+    });
+  }, []);
+  
   return (
     <div className="Home">
-      <ProSidebar>
-        <SidebarHeader>
-          {t('Welcome to React')}
-        </SidebarHeader>
-        <SidebarContent>
-          <Menu iconShape="square">
-            <MenuItem icon={<AccountBalanceWalletIcon />}>Dashboard</MenuItem>
-            <SubMenu title="Components" icon={<AccessibleForwardIcon />}>
-              <MenuItem>Component 1</MenuItem>
-              <MenuItem>Component 2</MenuItem>
-            </SubMenu>
-          </Menu>
-        </SidebarContent>
-        <SidebarFooter>
-          teste
-        </SidebarFooter>
-      </ProSidebar>
+      <Router>
+        <MenuComponent />
+        <div className="content">
+          <Switch>
+            <Route path="/demos">
+              <DemosComponent />
+            </Route>
+            <Route path="/codes">
+              <CodeComponent />
+            </Route>
+            <Route path="/">
+              <ResumeComponent />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
     </div>
   );
 }
