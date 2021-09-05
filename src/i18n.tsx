@@ -24,6 +24,13 @@ i18n
     // if you're using a language detector, do not define the lng option
 
     interpolation: {
+      format: (value, format, lng) => {
+        if (format === 'intlDate') {
+          return new Intl.DateTimeFormat(lng).format(value);
+        }
+    
+        return value;
+      },
       escapeValue: false // react already safes from xss
     }
   });
