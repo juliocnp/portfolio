@@ -14,7 +14,7 @@ function CodeComponent() {
 
     useEffect(() => {
         setLoading(true);
-        !repositories.length && GetRepositories()
+        GetRepositories()
             .then(function (response) {
                 response.data.map((repo: any) => repo['formattedDate'] = '{{date, intlDate}}');
                 setRepositories(response.data);
@@ -23,7 +23,7 @@ function CodeComponent() {
             .catch(function (error) {
                 setLoading(false);
             });
-    }, [repositories]);
+    }, []);
 
     const handleCodeClick = (url: string, openCode: boolean = false) => {
         if (openCode) {
@@ -35,49 +35,51 @@ function CodeComponent() {
     return (
         <div className="table-container">
             <Loading loading={loading} />
-            <TableContainer className="table-container">
-                <Table stickyHeader aria-label="sticky table">
-                    <TableHead>
-                        <TableCell align="left">{t('CODES.REPOSITORY')}</TableCell>
-                        <Hidden smDown>
-                            <TableCell align="left">{t('CODES.DESCRIPTION')}</TableCell>
-                        </Hidden>
-                        <TableCell align="center">{t('CODES.LANGUAGE')}</TableCell>
-                        <Hidden smDown>
-                            <TableCell align="left" >{t('CODES.CREATION_DATE')}</TableCell>
-                        </Hidden>
-                        <TableCell align="center">{t('CODES.OPEN_CODE')}</TableCell>
-                    </TableHead>
-                    <TableBody>
-                        {repositories && repositories.map((repo, key) => (
-                            <TableRow key={key}>
-                                <TableCell align="left">
-                                    <Button onClick={() => handleCodeClick(repo.html_url)} variant="outlined"
-                                        style={{textTransform: 'none'}}>
-                                        {repo.full_name}
-                                    </Button>
-                                </TableCell>
-                                <Hidden smDown>
-                                    <TableCell align="left">{repo.description}</TableCell>
-                                </Hidden>
-                                <TableCell align="center">
-                                    {repo.language && (
-                                        <Chip label={repo.language} variant="outlined" />
-                                    )}
-                                </TableCell>
-                                <Hidden smDown>
-                                    <TableCell  align="left">{t('formattedDate', repo.formattedDate)}</TableCell>
-                                </Hidden>
-                                <TableCell align="center">
-                                    <IconButton onClick={() => handleCodeClick(repo.html_url, true)}>
-                                        <CodeIcon />
-                                    </IconButton>
-                                </TableCell>
-                            </TableRow>
-                        ))}
-                    </TableBody>
-                </Table>
-            </TableContainer>
+            {!loading &&
+                <TableContainer className="table-container">
+                    <Table stickyHeader aria-label="sticky table">
+                        <TableHead>
+                            <TableCell align="left">{t('CODES.REPOSITORY')}</TableCell>
+                            <Hidden smDown>
+                                <TableCell align="left">{t('CODES.DESCRIPTION')}</TableCell>
+                            </Hidden>
+                            <TableCell align="center">{t('CODES.LANGUAGE')}</TableCell>
+                            <Hidden smDown>
+                                <TableCell align="left" >{t('CODES.CREATION_DATE')}</TableCell>
+                            </Hidden>
+                            <TableCell align="center">{t('CODES.OPEN_CODE')}</TableCell>
+                        </TableHead>
+                        <TableBody>
+                            {repositories && repositories.map((repo, key) => (
+                                <TableRow key={key}>
+                                    <TableCell align="left">
+                                        <Button onClick={() => handleCodeClick(repo.html_url)} variant="outlined"
+                                            style={{textTransform: 'none'}}>
+                                            {repo.full_name}
+                                        </Button>
+                                    </TableCell>
+                                    <Hidden smDown>
+                                        <TableCell align="left">{repo.description}</TableCell>
+                                    </Hidden>
+                                    <TableCell align="center">
+                                        {repo.language && (
+                                            <Chip label={repo.language} variant="outlined" />
+                                        )}
+                                    </TableCell>
+                                    <Hidden smDown>
+                                        <TableCell  align="left">{t('formattedDate', repo.formattedDate)}</TableCell>
+                                    </Hidden>
+                                    <TableCell align="center">
+                                        <IconButton onClick={() => handleCodeClick(repo.html_url, true)}>
+                                            <CodeIcon />
+                                        </IconButton>
+                                    </TableCell>
+                                </TableRow>
+                            ))}
+                        </TableBody>
+                    </Table>
+                </TableContainer>
+            }
         </div>
     )
 }
