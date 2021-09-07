@@ -10,7 +10,6 @@ const useStyles = makeStyles((theme: Theme) =>
     root: {
         margin: 8,
         maxWidth: 400,
-        minHeight: 800,
         background: '#1D1D1D',
         color: 'white'
     },
