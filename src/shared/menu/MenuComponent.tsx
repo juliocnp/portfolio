@@ -14,7 +14,7 @@ import { ProSidebar, Menu, MenuItem, SidebarContent, SubMenu, SidebarFooter, Sid
 
 function MenuComponent() {
     const { t } = useTranslation();
-    const [collapsedMenu, setCollapsedMenu] = useState(false);
+    const [collapsedMenu, setCollapsedMenu] = useState(true);
 
     const toggleMenuClick = () => {
       setCollapsedMenu(!collapsedMenu);

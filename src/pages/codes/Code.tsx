@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import GetRepositories from "../../services/GitHubService";
 import CodeIcon from '@material-ui/icons/Code';
-import './CodeComponent.scss';
+import './Code.scss';
 import Loading from "../../shared/loading/Loading";
 
 function CodeComponent() {
@@ -43,7 +43,9 @@ function CodeComponent() {
                             <Hidden smDown>
                                 <TableCell align="left">{t('CODES.DESCRIPTION')}</TableCell>
                             </Hidden>
-                            <TableCell align="center">{t('CODES.LANGUAGE')}</TableCell>
+                            <Hidden smDown>
+                                <TableCell align="center">{t('CODES.LANGUAGE')}</TableCell>
+                            </Hidden>
                             <Hidden smDown>
                                 <TableCell align="left" >{t('CODES.CREATION_DATE')}</TableCell>
                             </Hidden>
@@ -61,11 +63,13 @@ function CodeComponent() {
                                     <Hidden smDown>
                                         <TableCell align="left">{repo.description}</TableCell>
                                     </Hidden>
-                                    <TableCell align="center">
-                                        {repo.language && (
-                                            <Chip label={repo.language} variant="outlined" />
-                                        )}
-                                    </TableCell>
+                                    <Hidden smDown>
+                                        <TableCell align="center">
+                                            {repo.language && (
+                                                <Chip label={repo.language} variant="outlined" />
+                                            )}
+                                        </TableCell>
+                                    </Hidden>
                                     <Hidden smDown>
                                         <TableCell  align="left">{t('formattedDate', repo.formattedDate)}</TableCell>
                                     </Hidden>
