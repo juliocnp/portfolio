@@ -8,9 +8,9 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-import ResumeComponent from './resume/ResumeComponent';
+import ResumeComponent from './resume/Resume';
 import DemosComponent from './demos/DemosComponent';
-import CodeComponent from './codes/CodeComponent';
+import CodeComponent from './codes/Code';
 
 function Home() {
 
