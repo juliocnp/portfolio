@@ -1,26 +1,30 @@
-import { Card, CardContent, CardMedia, createStyles, makeStyles, Theme, Chip, CardActions, Button } from '@material-ui/core';
+import { Card, CardContent, CardMedia, createStyles, makeStyles, Chip, CardActions, Button } from '@material-ui/core';
 import { getDownloadURL, ref } from 'firebase/storage';
 import { useEffect, useState } from 'react';
 import SendIcon from '@material-ui/icons/Send';
 import Loading from '../../../shared/loading/Loading';
 import { storage } from '../../../services/FirebaseService';
+import { useTranslation } from "react-i18next";
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles(() =>
   createStyles({
     root: {
         margin: 8,
         maxWidth: 400,
-        minHeight: 800,
         background: '#1D1D1D',
-        color: 'white'
+        color: 'white',
+        minHeight: 540
     },
     media: {
         height: 250,
     },
+    photoContainer: {
+        position: 'relative'
+    },
     gradient: {
         position: 'absolute',
         height: 250,
-        // width: 400,
+        width: 400,
         maxWidth: 400,
         background: 'linear-gradient(0deg, rgba(29,29,29,1) 0%, rgba(29,29,29,0) 50%)'
     },
@@ -65,6 +69,7 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 function ProfileComponent() {
+    const { t } = useTranslation();
     const classes = useStyles();
     const [photoURL, setPhotoURL] = useState<string>();
     const [loading, setLoading] = useState<boolean>(false);
@@ -87,7 +92,7 @@ function ProfileComponent() {
         <Card className={classes.root}>
             <Loading loading={loading} />
             {photoURL &&
-                <div>
+                <div className={classes.photoContainer}>
                     <div className={classes.gradient}></div>
                     <CardMedia
                         className={classes.media}
@@ -97,10 +102,10 @@ function ProfileComponent() {
                 </div>
             }
             <CardContent className={classes.cardContent}>
-                <h1 className={classes.name}>Júlio César Nunes de Paula</h1>
-                <h2 className={classes.role}>Desenvolvedor líder fullstack</h2>
-                <h2 className={classes.role}>3 anos de experiência</h2>
-                <p className={classes.description}>Creio em equipe alinhada, metodologias ágeis e arquiteturas elegantes para a construção de soluções magistrais.</p>
+                <h1 className={classes.name}>{t('PROFILE.NAME')}</h1>
+                <h2 className={classes.role}>{t('PROFILE.ROLE')}</h2>
+                <h2 className={classes.role}>{t('PROFILE.EXPERIENCE')}</h2>
+                <p className={classes.description}>{t('PROFILE.DESCRIPTION')}</p>
                 <div className={classes.tags}>
                     <Chip label='.Net' variant="outlined" color="primary" className={classes.tagsMargin} />
                     <Chip label='React' variant="outlined" color="primary" className={classes.tagsMargin} />

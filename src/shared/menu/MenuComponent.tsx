@@ -23,7 +23,7 @@ function MenuComponent() {
     const changeLanguage = (language: string) => {
       i18next.changeLanguage(language, (err: any, t: (arg0: string) => void) => {
         if (err) return console.log('something went wrong loading', err);
-        t('key'); // -> same as i18next.t
+        t('key');
       });
     }
 

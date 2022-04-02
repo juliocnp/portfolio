@@ -14,5 +14,16 @@
         "LANGUAGE": "Linguagem",
         "CREATION_DATE": "Data de Criação",
         "OPEN_CODE": "Abrir código"
+    },
+    "PROFILE": {
+        "NAME": "Júlio César Nunes de Paula",
+        "ROLE": "Desenvolvedor líder fullstack",
+        "EXPERIENCE": "3 anos de experiência",
+        "DESCRIPTION": "Creio em equipe alinhada, metodologias ágeis e arquiteturas elegantes para a construção de soluções magistrais."
+    },
+    "DEGREE": {
+        "TITLE": "Formação acadêmica",
+        "PUC_NAME": "Pontifícia Universidade Católica de Minas Gerais",
+        "DEGREE": "Graduação - Sistemas de informação"
     }
 }
