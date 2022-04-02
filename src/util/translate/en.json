@@ -14,5 +14,16 @@
         "LANGUAGE": "Language",
         "CREATION_DATE": "Creation Date",
         "OPEN_CODE": "Open Code"
+    },
+    "PROFILE": {
+        "NAME": "Júlio César Nunes de Paula",
+        "ROLE": "Fullstack developer leader",
+        "EXPERIENCE": "3 years of experience",
+        "DESCRIPTION": "I believe in a aligned team, agile methodologies and elegant architectures to build magistral solutions."
+    },
+    "DEGREE": {
+        "TITLE": "Academic education",
+        "PUC_NAME": "Pontifícia Universidade Católica de Minas Gerais",
+        "DEGREE": "Graduation - Information Systems"
     }
 }
