@@ -1,7 +1,6 @@
 import { makeStyles, createStyles, Card, CardContent } from "@material-ui/core";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import Loading from './../../../shared/loading/Loading';
 import PucMinasLogo from './../../../util/images/PucMinas.png';
 
 const useStyles = makeStyles(() =>
@@ -37,12 +36,10 @@ const useStyles = makeStyles(() =>
 function DescriptionComponent() {
     const { t } = useTranslation();
     const classes = useStyles();
-    const [loading, setLoading] = useState<boolean>(false);
     
     return (
         <div className={classes.pageContainer}>
             <Card className={classes.degreeCard}>
-                <Loading loading={loading} />
                 <CardContent className={classes.degreeContainer}>
                     <img src={PucMinasLogo} className={classes.pucMinasLogo} alt="Pucminas logo"></img>
                     <div className={classes.degreeInfo}>
@@ -53,7 +50,6 @@ function DescriptionComponent() {
                 </CardContent>
             </Card>
             <Card className={classes.degreeContainer}>
-                <Loading loading={loading} />
                 <CardContent>
                     <span>TAS CERTO ZE?</span>
                 </CardContent>
