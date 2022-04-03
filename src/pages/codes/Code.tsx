@@ -34,7 +34,7 @@ function CodeComponent() {
 
     return (
         <div className="table-container">
-            <Loading loading={loading} />
+            <Loading loading={loading} className='table-container' />
             {!loading &&
                 <TableContainer className="table-container">
                     <Table stickyHeader aria-label="sticky table">

@@ -3,11 +3,11 @@ import './Loading.scss';
 
 function Loading(props: any) {
     return (
-        <div className={props.loading && "loading-container"}>
-            {props.loading && (
-                <ClimbingBoxLoader loading={props.loading} />
-            )}
-        </div>
+        props.loading && (
+            <div className="loading-container">
+            <ClimbingBoxLoader loading={props.loading} color={props.color} />
+            </div>
+        )
     )
 }
 

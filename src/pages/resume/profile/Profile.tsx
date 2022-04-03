@@ -19,7 +19,8 @@ const useStyles = makeStyles(() =>
         height: 250,
     },
     photoContainer: {
-        position: 'relative'
+        position: 'relative',
+        height: 250
     },
     gradient: {
         position: 'absolute',
@@ -76,8 +77,8 @@ function ProfileComponent() {
 
     useEffect(() => {
         setLoading(true);
-        const storageRef = ref(storage, 'JulioAgosto.png');
-        getDownloadURL(storageRef)
+        const storagePhotoRef = ref(storage, 'JulioAgosto.png');
+        getDownloadURL(storagePhotoRef)
             .then(data => {
                 setPhotoURL(data);
                 setLoading(false);
@@ -90,17 +91,17 @@ function ProfileComponent() {
 
     return (
         <Card className={classes.root}>
-            <Loading loading={loading} />
-            {photoURL &&
-                <div className={classes.photoContainer}>
-                    <div className={classes.gradient}></div>
-                    <CardMedia
-                        className={classes.media}
-                        image={photoURL}
-                        title="Júlio César"
-                    />
+            <div className={classes.photoContainer}>
+                <div className={classes.gradient}></div>
+                    <Loading loading={loading} color='#ffffff' />
+                    {photoURL &&
+                        <CardMedia
+                            className={classes.media}
+                            image={photoURL}
+                            title="Júlio César"
+                        />
+                    }
                 </div>
-            }
             <CardContent className={classes.cardContent}>
                 <h1 className={classes.name}>{t('PROFILE.NAME')}</h1>
                 <h2 className={classes.role}>{t('PROFILE.ROLE')}</h2>
