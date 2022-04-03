@@ -1,5 +1,4 @@
 import { makeStyles, createStyles, Card, CardContent } from "@material-ui/core";
-import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import PucMinasLogo from './../../../util/images/PucMinas.png';
 
