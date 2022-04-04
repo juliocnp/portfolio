@@ -9,7 +9,7 @@ const DescriptionUI = makeStyles(() =>
         margin: 8,
         gap: 8
     },
-    degreeCard: {
+    accordion: {
         color: 'white',
         backgroundColor: '#1D1D1D',
     },

@@ -6,7 +6,7 @@ import ResumeUI from './ResumeUI';
 function ResumeComponent() {
     const classes = ResumeUI();
     const theme = useTheme();
-    const matches = useMediaQuery(theme.breakpoints.up('sm'));
+    const matches = useMediaQuery(theme.breakpoints.up('md'));
     return (
         <div className={matches ? classes.container : (classes.container, classes.column)}>
             <ProfileComponent/>

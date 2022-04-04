@@ -19,6 +19,7 @@ const LoadingUI = makeStyles(() =>
         height: '100vh',
         display: 'flex',
         flexDirection: 'row',
+        backgroundColor: '#d6cdf2'
     },
     content: {
         width: '100%',

@@ -14,11 +14,11 @@ const ProfileUI = makeStyles(() =>
     },
     photoContainer: {
         position: 'relative',
-        height: 250
+        minHeight: 250,
     },
     gradient: {
         position: 'absolute',
-        height: 250,
+        minHeight: 250,
         width: 400,
         maxWidth: 400,
         background: 'linear-gradient(0deg, rgba(29,29,29,1) 0%, rgba(29,29,29,0) 50%)'

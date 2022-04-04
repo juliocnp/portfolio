@@ -7,8 +7,6 @@ import { storage } from '../../../services/FirebaseService';
 import { useTranslation } from "react-i18next";
 import ProfileUI from './ProfileUI';
 
-
-
 function ProfileComponent() {
     const { t } = useTranslation();
     const classes = ProfileUI();

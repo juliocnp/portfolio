@@ -30,8 +30,9 @@
         "ENGLISH": "English"
     },
     "DEGREE": {
-        "TITLE": "Academic education",
+        "TITLE": "Academic formation",
         "PUC_NAME": "Pontifical Catholic University of Minas Gerais",
-        "DEGREE": "Graduation - Information Systems"
+        "DEGREE": "Graduation - Information Systems",
+        "INFO": "Currently in 7th period"
     }
 }
