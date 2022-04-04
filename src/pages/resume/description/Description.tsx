@@ -1,43 +1,14 @@
-import { makeStyles, createStyles, Card, CardContent } from "@material-ui/core";
+import { Card, CardContent } from "@material-ui/core";
 import { getDownloadURL, ref } from "firebase/storage";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { storage } from "../../../services/FirebaseService";
 import Loading from "../../../shared/loading/Loading";
-
-const useStyles = makeStyles(() =>
-  createStyles({
-    pageContainer: {
-        display: 'flex',
-        flexDirection: 'column',
-        flex: 1,
-        margin: 8,
-        gap: 8
-    },
-    degreeCard: {
-        color: 'white',
-        backgroundColor: '#1D1D1D',
-    },
-    degreeContainer: {
-        display: 'flex',
-        alignItems: 'center',
-        gap: 8
-    },
-    degreeInfo: {
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 4
-    },
-    pucMinasLogo: {
-        width: 115,
-        height: 100
-    }
-  }),
-);
+import DescriptionUI from "./DescriptionUI";
 
 function DescriptionComponent() {
     const { t } = useTranslation();
-    const classes = useStyles();
+    const classes = DescriptionUI();
     const [loading, setLoading] = useState<boolean>(false);
     const [pucLogoURL, setPucLogoURL] = useState<string>();
     

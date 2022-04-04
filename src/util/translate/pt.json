@@ -19,7 +19,15 @@
         "NAME": "Júlio César Nunes de Paula",
         "ROLE": "Desenvolvedor líder fullstack",
         "EXPERIENCE": "3 anos de experiência",
-        "DESCRIPTION": "Creio em equipe alinhada, metodologias ágeis e arquiteturas elegantes para a construção de soluções magistrais."
+        "DESCRIPTION": "Creio em equipe alinhada, metodologias ágeis e arquiteturas elegantes para a construção de soluções magistrais.",
+        "CONTACT": "Entre em contato!",
+        "NET": ".Net",
+        "REACT": "React",
+        "ANGULAR": "Angular",
+        "SQLSERVER": "SQL Server",
+        "AZURE": "Azure",
+        "SCRUM": "Scrum",
+        "ENGLISH": "Inglês"
     },
     "DEGREE": {
         "TITLE": "Formação acadêmica",

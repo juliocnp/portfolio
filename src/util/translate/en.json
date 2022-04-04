@@ -19,7 +19,15 @@
         "NAME": "Júlio César Nunes de Paula",
         "ROLE": "Fullstack developer leader",
         "EXPERIENCE": "3 years of experience",
-        "DESCRIPTION": "I believe in a aligned team, agile methodologies and elegant architectures to build magistral solutions."
+        "DESCRIPTION": "I believe in a aligned team, agile methodologies and elegant architectures to build magistral solutions.",
+        "CONTACT": "Contact me!",
+        "NET": ".Net",
+        "REACT": "React",
+        "ANGULAR": "Angular",
+        "SQLSERVER": "SQL Server",
+        "AZURE": "Azure",
+        "SCRUM": "Scrum",
+        "ENGLISH": "English"
     },
     "DEGREE": {
         "TITLE": "Academic education",

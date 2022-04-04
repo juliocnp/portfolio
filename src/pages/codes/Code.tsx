@@ -4,11 +4,12 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import GetRepositories from "../../services/GitHubService";
 import CodeIcon from '@material-ui/icons/Code';
-import './Code.scss';
 import Loading from "../../shared/loading/Loading";
+import CodeUI from "./CodeUI";
 
 function CodeComponent() {
     const { t } = useTranslation();
+    const classes = CodeUI();
     const [repositories, setRepositories] = useState<any[]>([]);
     const [loading, setLoading] = useState<boolean>(false);
 
@@ -33,10 +34,10 @@ function CodeComponent() {
     }
 
     return (
-        <div className="table-container">
-            <Loading loading={loading} className='table-container' />
+        <div className={classes.tableContainer}>
+            <Loading loading={loading} className={classes.tableContainer} />
             {!loading &&
-                <TableContainer className="table-container">
+                <TableContainer className={classes.tableContainer}>
                     <Table stickyHeader aria-label="sticky table">
                         <TableHead>
                             <TableCell align="left">{t('CODES.REPOSITORY')}</TableCell>
