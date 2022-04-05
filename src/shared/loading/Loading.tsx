@@ -1,13 +1,14 @@
 import ClimbingBoxLoader from "react-spinners//ClimbingBoxLoader";
-import './Loading.scss';
+import LoadingUI from "./LoadingUI";
 
 function Loading(props: any) {
+    const classes = LoadingUI();
     return (
-        <div className={props.loading && "loading-container"}>
-            {props.loading && (
-                <ClimbingBoxLoader loading={props.loading} />
-            )}
-        </div>
+        props.loading && (
+            <div className={classes.loadingContainer}>
+                <ClimbingBoxLoader loading={props.loading} color={props.color} />
+            </div>
+        )
     )
 }
 
