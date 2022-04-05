@@ -1,4 +1,3 @@
-import './Home.scss';
 import 'react-pro-sidebar/dist/css/styles.css';
 import { createTheme } from '@material-ui/core/styles';
 import { useEffect } from 'react';
@@ -11,8 +10,10 @@ import {
 import ResumeComponent from './resume/Resume';
 import DemosComponent from './demos/DemosComponent';
 import CodeComponent from './codes/Code';
+import HomeUI from './HomeUI';
 
 function Home() {
+  const classes = HomeUI();
 
   useEffect(() => { 
     createTheme({
@@ -34,10 +35,10 @@ function Home() {
   }, []);
   
   return (
-    <div className="Home">
+    <div className={classes.home} >
       <Router>
         <MenuComponent />
-        <div className="content">
+        <div className={classes.content}>
           <Switch>
             <Route path="/demos">
               <DemosComponent />
